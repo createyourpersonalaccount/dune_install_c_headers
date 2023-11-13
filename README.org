@@ -1,0 +1,22 @@
+#+TITLE: A dune project installing a C library
+
+* Information
+
+** How to build and install
+
+Use the following to build
+
+#+begin_src bash
+  dune build -p foo-ocaml,foo
+#+end_src
+
+and then from a root shell,
+
+#+begin_src bahs
+  opam-installer foo-ocaml.install && opam-installer foo.install
+#+end_src
+
+** What files are contained in this repository
+
+We define two packages, ~foo~ and ~foo-ocaml~. The ~foo-ocaml~ package contains an OCaml library ~mylib~ with a single function ~myfunc : bool -> int~. The ~foo~ package uses the C stub mechanism to create an ~.so~ that is linkable from C.
+

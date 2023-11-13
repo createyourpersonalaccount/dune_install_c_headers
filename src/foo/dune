@@ -1,0 +1,8 @@
+(library
+ (public_name foo.CAPI)
+ (name CAPI)
+ (libraries foo-ocaml.mylib)
+ (foreign_stubs (language c)
+                (names cstub))
+ (public_headers cstub.h)
+ (flags :standard -linkall))
